@@ -41,9 +41,9 @@ class MyAdapter(
 
 
     inner class MyViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
-        //val title : ShapeableImageView = itemView.findViewById(R.id.title)
+        val title : ShapeableImageView = itemView.findViewById(R.id.title)
         val header : TextView = itemView.findViewById(R.id.header)
-       // val description : TextView = itemView.findViewById(R.id.description)
+        val description : TextView = itemView.findViewById(R.id.description)
 
 
         init {

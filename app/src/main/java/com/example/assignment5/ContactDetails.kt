@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class ContactDetailsActivity : AppCompatActivity() {
+class ContactDetails : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +23,7 @@ class ContactDetailsActivity : AppCompatActivity() {
         val description = bundle!!.getString("description")
 
         contactHeading.text = header
-        // contactDescription.text = description
-        // contactImage.setImageResource(imageId)
+        contactDescription.text = description
+        contactImage.setImageResource(imageId)
 
     }}
