@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity(){
         adapter.setOnItermClickListener(object : MyAdapter.onItemClickListener {
 
             override fun onItemClick(position: Int) {
-                val intent = Intent(this@MainActivity,ContactDetails::class.java)
+                val intent = Intent(this@MainActivity, ContactDetailsActivity::class.java)
                 intent.putExtra("heading", newArrayList[position].header)
                 intent.putExtra("description", newArrayList[position].description)
                 intent.putExtra("image", newArrayList[position].title)
