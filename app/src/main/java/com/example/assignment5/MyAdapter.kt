@@ -20,13 +20,15 @@ class MyAdapter(
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
        val currentItem = contactlist[position]
+
         //holder.title.setImageResource(currentItem.title)
         holder.header.text = currentItem.header
         holder.description.text = currentItem.description
+
         holder.itemView.setOnClickListener(View.OnClickListener {
             val intent = Intent(it.context, ContactDetailsActivity::class.java).apply {
-                putExtra("heading", holder.header.text)
-                //putExtra("description", holder.itemId)
+                putExtra("header", holder.header.text)
+                putExtra("description", holder.description.text)
                 // putExtra("image", holder.description.text)
             }
             it.context.startActivity(intent)

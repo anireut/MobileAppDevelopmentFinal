@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity(){
     //private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<Contacts>
     lateinit var imageId : Array<Int>
-    lateinit var heading : Array<String>
+    lateinit var header : Array<String>
     lateinit var description : Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity(){
 
         )
 
-        heading = arrayOf(
+        header = arrayOf(
             "Ceasar, Julius",
             "Deer, John",
             "Ernest, Hemingway",
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity(){
 
     private fun getUserdata(){
             for (i in imageId.indices) {
-                val contacts = Contacts(imageId[i], heading[i], description[i])
+                val contacts = Contacts(imageId[i], header[i], description[i])
                 newArrayList.add(contacts)
             }
         /*
