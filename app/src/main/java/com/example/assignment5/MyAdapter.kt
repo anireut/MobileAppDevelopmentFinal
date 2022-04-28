@@ -1,5 +1,6 @@
 package com.example.assignment5
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,26 +13,24 @@ class MyAdapter(
     private val contactlist : ArrayList<Contacts>) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
-
-    private lateinit var clickslistener : onItemClickListener
-    interface  onItemClickListener{
-            fun onItemClick(position: Int)
-
-    }
-    fun setOnItermClickListener(listener: onItemClickListener){
-        clickslistener = listener
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
-        return MyViewHolder(itemView, clickslistener)
+        return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
        val currentItem = contactlist[position]
         //holder.title.setImageResource(currentItem.title)
         holder.header.text = currentItem.header
-    //holder.description.text = currentItem.description
+        //holder.description.text = currentItem.description
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            val intent = Intent(it.context, ContactDetailsActivity::class.java).apply {
+                putExtra("heading", holder.header.text)
+                //putExtra("description", newArrayList[position].description)
+                //putExtra("image", newArrayList[position].title)
+            }
+            it.context.startActivity(intent)
+        })
 
     }
 
@@ -40,17 +39,10 @@ class MyAdapter(
     }
 
 
-    inner class MyViewHolder(itemView: View, listener: onItemClickListener) : RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         //val title : ShapeableImageView = itemView.findViewById(R.id.title)
         val header : TextView = itemView.findViewById(R.id.header)
-        val description : TextView = itemView.findViewById(R.id.description)
-
-
-        init {
-            itemView.setOnClickListener {
-                listener.onItemClick(adapterPosition)
-            }
-        }
+        //val description : TextView = itemView.findViewById(R.id.description)
 
     }
 

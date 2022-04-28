@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val rv: RecyclerView = findViewById(R.id.recyclerView)
         imageId = arrayOf(
 
             R.drawable.nopfp,
@@ -64,11 +65,12 @@ class MainActivity : AppCompatActivity(){
             "Father",
             "Spouse"
         )
-        newRecyclerView = findViewById(R.id.recyclerView)
-        newRecyclerView.layoutManager = LinearLayoutManager(this)
-        newRecyclerView.setHasFixedSize(true)
+        //newRecyclerView = findViewById(R.id.recyclerView)
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.setHasFixedSize(true)
         newArrayList = arrayListOf<Contacts>()
         getUserdata()
+        rv.adapter = MyAdapter(newArrayList)
 
     }
     private fun getUserdata(){
@@ -76,9 +78,10 @@ class MainActivity : AppCompatActivity(){
                 val contacts = Contacts(imageId[i], heading[i], description[i])
                 newArrayList.add(contacts)
             }
-        var adapter = MyAdapter(newArrayList)
-        newRecyclerView.adapter = adapter
-        adapter.setOnItermClickListener(object : MyAdapter.onItemClickListener {
+        /*
+        //var adapter = MyAdapter(newArrayList)
+        //newRecyclerView.adapter = adapter
+        //adapter.setOnItermClickListener(object : MyAdapter.onItemClickListener {
 
             override fun onItemClick(position: Int) {
                 val intent = Intent(this@MainActivity, ContactDetailsActivity::class.java)
@@ -88,7 +91,9 @@ class MainActivity : AppCompatActivity(){
                 startActivity(intent)
 
             }
-        })
+
+
+        })*/
     }
 
 
