@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(){
 
         val bottomNavigationBar : BottomNavigationView = findViewById(R.id.btmNav)
         val rv: RecyclerView = findViewById(R.id.recyclerView)
+
+
         imageId = arrayOf(
 
             R.drawable.nopfp,
