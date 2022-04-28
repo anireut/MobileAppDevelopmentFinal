@@ -8,6 +8,7 @@ import android.widget.AdapterView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(){
     private lateinit var newRecyclerView: RecyclerView
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val bottomNavigationBar : BottomNavigationView = findViewById(R.id.btmNav)
         val rv: RecyclerView = findViewById(R.id.recyclerView)
         imageId = arrayOf(
 
