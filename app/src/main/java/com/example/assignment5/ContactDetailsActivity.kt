@@ -13,6 +13,7 @@ class ContactDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_details)
 
+        val description = intent.getStringExtra("description")
         val header = intent.getStringExtra("header")
 
 
@@ -20,16 +21,16 @@ class ContactDetailsActivity : AppCompatActivity() {
 
 
         val contactDescription: TextView = findViewById(R.id.description)
-        val contactImage: ImageView = findViewById(R.id.title)
-        val bundle: Bundle? = intent.extras
+        //val contactImage: ImageView = findViewById(R.id.title)
+        //val bundle: Bundle? = intent.extras
 
         //val header = bundle!!.getString("heading")
-        val imageId = bundle!!.getInt("imageId")
-        val description = bundle!!.getString("description")
+        //val imageId = bundle!!.getInt("imageId")
+        //val description = bundle!!.getString("description")
 
         contactHeading.text = header
         contactDescription.text = description
-        contactImage.setImageResource(imageId)
+        //contactImage.setImageResource(imageId)
     }
 
 }

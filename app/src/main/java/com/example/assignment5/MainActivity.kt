@@ -3,15 +3,18 @@ package com.example.assignment5
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity(){
-    private lateinit var newRecyclerView: RecyclerView
+    //private lateinit var newRecyclerView: RecyclerView
     private lateinit var newArrayList: ArrayList<Contacts>
     lateinit var imageId : Array<Int>
     lateinit var heading : Array<String>
@@ -22,6 +25,9 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         val bottomNavigationBar : BottomNavigationView = findViewById(R.id.btmNav)
+        //val navController = findNavController(R.id.recyclerView)
+
+        //bottomNavigationBar.setupWithNavController(navController)
         val rv: RecyclerView = findViewById(R.id.recyclerView)
 
 
@@ -77,6 +83,7 @@ class MainActivity : AppCompatActivity(){
         rv.adapter = MyAdapter(newArrayList)
 
     }
+
     private fun getUserdata(){
             for (i in imageId.indices) {
                 val contacts = Contacts(imageId[i], heading[i], description[i])
@@ -99,6 +106,7 @@ class MainActivity : AppCompatActivity(){
 
         })*/
     }
+
 
 
 
