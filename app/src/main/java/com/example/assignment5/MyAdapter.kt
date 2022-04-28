@@ -26,8 +26,8 @@ class MyAdapter(
         holder.itemView.setOnClickListener(View.OnClickListener {
             val intent = Intent(it.context, ContactDetailsActivity::class.java).apply {
                 putExtra("heading", holder.header.text)
-                //putExtra("description", newArrayList[position].description)
-                //putExtra("image", newArrayList[position].title)
+                //putExtra("description", holder.itemId)
+                // putExtra("image", holder.description.text)
             }
             it.context.startActivity(intent)
         })

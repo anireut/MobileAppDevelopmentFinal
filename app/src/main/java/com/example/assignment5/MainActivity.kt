@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity(){
         setContentView(R.layout.activity_main)
 
         val rv: RecyclerView = findViewById(R.id.recyclerView)
+
+
         imageId = arrayOf(
 
             R.drawable.nopfp,

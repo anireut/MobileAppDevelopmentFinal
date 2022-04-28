@@ -19,17 +19,17 @@ class ContactDetailsActivity : AppCompatActivity() {
         val contactHeading: TextView = findViewById(R.id.header)
 
 
-        //val contactDescription: TextView = findViewById(R.id.description)
-        //val contactImage: ImageView = findViewById(R.id.title)
-        //val bundle: Bundle? = intent.extras
+        val contactDescription: TextView = findViewById(R.id.description)
+        val contactImage: ImageView = findViewById(R.id.title)
+        val bundle: Bundle? = intent.extras
 
         //val header = bundle!!.getString("heading")
-        //val imageId = bundle!!.getInt("imageId")
-        //val description = bundle!!.getString("description")
+        val imageId = bundle!!.getInt("imageId")
+        val description = bundle!!.getString("description")
 
         contactHeading.text = header
-        //contactDescription.text = description
-        //contactImage.setImageResource(imageId)
+        contactDescription.text = description
+        contactImage.setImageResource(imageId)
     }
 
 }
