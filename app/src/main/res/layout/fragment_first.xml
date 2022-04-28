@@ -6,13 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".FirstFragment"
     >
-
-
     <TextView
         android:id="@+id/location"
-        android:layout_width="358dp"
-        android:layout_height="602dp"
-        android:text="CONTACTS LOCATION: "
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="CONTACTS LOCATION"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15dp"
@@ -21,6 +19,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,8 +7,8 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="352dp"
-        android:layout_height="109dp"
+        android:layout_width="342dp"
+        android:layout_height="87dp"
         android:layout_marginTop="28dp"
         android:padding="20dp"
         android:text=""
@@ -63,14 +63,14 @@
 
     <fragment
         android:id="@+id/location"
-        class="com.example.assignment5.MapsFragment"
+        class="com.example.assignment5.FirstFragment"
         android:layout_width="347dp"
         android:layout_height="43dp"
         app:layout_constraintBottom_toTopOf="@+id/details_fragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="InvalidId" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
