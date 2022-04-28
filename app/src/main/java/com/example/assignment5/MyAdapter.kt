@@ -22,7 +22,7 @@ class MyAdapter(
        val currentItem = contactlist[position]
         //holder.title.setImageResource(currentItem.title)
         holder.header.text = currentItem.header
-        //holder.description.text = currentItem.description
+        holder.description.text = currentItem.description
         holder.itemView.setOnClickListener(View.OnClickListener {
             val intent = Intent(it.context, ContactDetailsActivity::class.java).apply {
                 putExtra("heading", holder.header.text)
@@ -42,7 +42,7 @@ class MyAdapter(
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         //val title : ShapeableImageView = itemView.findViewById(R.id.title)
         val header : TextView = itemView.findViewById(R.id.header)
-        //val description : TextView = itemView.findViewById(R.id.description)
+        val description : TextView = itemView.findViewById(R.id.description)
 
     }
 
